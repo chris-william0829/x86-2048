@@ -1,0 +1,5 @@
+﻿  Assembling main.asm...
+main.asm(929): warning A6004: procedure argument or local not referenced : hWnd
+main.asm(1082): warning A6004: procedure argument or local not referenced : @stRect
+main.asm(1082): warning A6004: procedure argument or local not referenced : @oldPen
+  2048.vcxproj -> C:\Work\2048\Debug\2048.exe
