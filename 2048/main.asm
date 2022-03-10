@@ -96,7 +96,7 @@ BITMAP2 EQU 104
 ;@Function Name :  gameWin
 ;@Param			:  
 ;@Description   :  绘制游戏胜利消息弹窗，玩家可选择继续游玩，则置gameContinue为1，之后不再弹出弹窗
-;@Author        :  陈稳
+;@Author        :  Chris
 ;--------------------------------------------------------------------------------------
 gameWin proc
 	invoke MessageBox,hWinMain,offset szWinText,offset szText6,MB_OK
@@ -118,7 +118,7 @@ gameWin endp
 ;@Param			:  random_seed  随机数种子
 ;					max_val		生成随机数大小限制
 ;@Description   :  基于输入的种子与限定的随机数最大值产生32位随机数，随后初始化矩阵
-;@Author        :  吴雪龙
+;@Author        :  WXL
 ;--------------------------------------------------------------------------------------
 random32       proc    random_seed:DWORD,max_val:DWORD 
                 push ecx				;保存寄存器信息
@@ -186,7 +186,7 @@ random32       proc    random_seed:DWORD,max_val:DWORD
 ;@Function Name :  getscore
 ;@Param			: 
 ;@Description   :  根据矩阵当前状态计算分数
-;@Author        :  吴雪龙
+;@Author        :  WXL
 ;--------------------------------------------------------------------------------------
 getscore       proc
             push    ecx
@@ -243,7 +243,7 @@ getscore        Endp
 ;@Function Name :  diamondMove
 ;@Param			:  
 ;@Description   :  实现4×4的方块在四个方向上的移动与合成
-;@Author        :  付宇
+;@Author        :  FY
 ;--------------------------------------------------------------------------------------
 
 moveW proc far C uses eax ebx ecx edx
@@ -762,7 +762,7 @@ moveS endp
 ;--------------------------------------------------------------------------------------
 ;@Function Name :  gameEnd
 ;@Description   :  检查游戏是否结束，游戏结束则修改gameIsEnd=1
-;@Author        :  吴雪龙，陈稳
+;@Author        :  Chris
 ;--------------------------------------------------------------------------------------
 gameEnd proc
 			
@@ -856,7 +856,7 @@ gameEnd Endp
 ;@Function Name :  num2byte
 ;@Param			:  number(转换的数字)
 ;@Description   :  将数字按位转为字符存储到数组中，如2048=‘2’‘0’‘4’‘8’
-;@Author        :  陈稳
+;@Author        :  Chris
 ;--------------------------------------------------------------------------------------
 num2byte proc far C uses eax esi ecx,number:dword
 
@@ -912,7 +912,7 @@ num2byte endp
 ;@Function Name :  DrawGame
 ;@Param			:  hWnd（窗口句柄）
 ;@Description   :  绘制游戏界面，说明框，和分数框
-;@Author        :  陈稳
+;@Author        :  Chris
 ;--------------------------------------------------------------------------------------
 DrawGame proc far C uses eax esi ecx edx,hWnd
 	
@@ -1036,7 +1036,7 @@ DrawGame endp
 ;@Function Name :  UpdataGame
 ;@Param			:  hWnd（窗口句柄）
 ;@Description   :  由于gameMat值改变，需要改变界面的值
-;@Author        :  陈稳
+;@Author        :  Chris
 ;--------------------------------------------------------------------------------------
 UpdataGame proc far C uses eax esi ecx edx,hWnd
 	
@@ -1097,7 +1097,7 @@ UpdataGame endp
 ;@Function Name :  ReStartGame
 ;@Param			:  
 ;@Description   :  重新开始游戏
-;@Author        :  陈稳
+;@Author        :  Chris
 ;--------------------------------------------------------------------------------------
 ReStartGame proc far C uses eax esi ecx edx
 	
@@ -1125,7 +1125,7 @@ ReStartGame endp
 ;@Function Name :  _ProcWinMain
 ;@Param			:  
 ;@Description   :  窗口回调函数，处理窗口消息
-;@Author        :  陈稳
+;@Author        :  Chris
 ;--------------------------------------------------------------------------------------
 _ProcWinMain proc uses ebx edi esi,hWnd,uMsg,wParam,lParam  ;窗口过程
 	local @stPs:PAINTSTRUCT
@@ -1280,7 +1280,7 @@ _ProcWinMain endp
 ;@Function Name :  _WinMain
 ;@Param			:  
 ;@Description   :  窗口程序，注册主窗口
-;@Author        :  
+;@Author        :  Chris
 ;--------------------------------------------------------------------------------------
 
 _WinMain proc  ;窗口程序
